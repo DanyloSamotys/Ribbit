@@ -19,4 +19,6 @@
     <string name="signup">Sign up</string>
     <string name="alert_dialog_message">Please fill out all of the fields!</string>
     <string name="error_dialod_title">Error!</string>
+    <string name="wrong_login_message">Please enter a valid login data.</string>
+    <string name="logout_label">Log out</string>
 </resources>
