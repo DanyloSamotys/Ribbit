@@ -30,6 +30,7 @@ public class LoginActivity extends ActionBarActivity {
     @InjectView(R.id.usernameField)EditText mUsername;
     @InjectView(R.id.passwordField) EditText mPassword;
     @InjectView(R.id.loginButton)Button mLogInButton;
+    @InjectView(R.id.forgotPassText) TextView mForgotPassText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,14 @@ public class LoginActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mForgotPassText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ResetPassActivity.class);
                 startActivity(intent);
             }
         });

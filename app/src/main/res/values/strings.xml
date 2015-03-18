@@ -21,4 +21,8 @@
     <string name="error_dialod_title">Error!</string>
     <string name="wrong_login_message">Please enter a valid login data.</string>
     <string name="logout_label">Log out</string>
+    <string name="title_activity_reset_pass">ResetPassActivity</string>
+    <string name="resert_text">Reset password</string>
+    <string name="error_reset_message">Sorry something went wrong. Try again!</string>
+    <string name="forgot_pass_label">Fargot your password?</string>
 </resources>
