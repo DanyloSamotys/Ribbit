@@ -35,7 +35,8 @@
         <activity
             android:name=".ResetPassActivity"
             android:label="@string/title_activity_reset_pass"
-            android:parentActivityName=".LoginActivity" >
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="samotys.danylo.ribbit.LoginActivity" />
