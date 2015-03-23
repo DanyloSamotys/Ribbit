@@ -36,10 +36,19 @@
             android:name=".ResetPassActivity"
             android:label="@string/title_activity_reset_pass"
             android:parentActivityName=".LoginActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="samotys.danylo.ribbit.LoginActivity" />
+        </activity>
+        <activity
+            android:name=".EditFriendsActivity"
+            android:label="@string/title_activity_edit_friends"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+        <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="samotys.danylo.ribbit.MainActivity" />
         </activity>
     </application>
 
