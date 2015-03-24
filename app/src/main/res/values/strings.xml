@@ -26,6 +26,15 @@
     <string name="empty_friends_label">Add friends to begin!</string>
     <string name="menu_edit_friends_label">Edit Friends</string>
     <string name="title_activity_edit_friends">Edit Friends</string>
-
+    <string-array name="camera_choices">
+        <item>Take Photo</item>
+        <item>Take Video</item>
+        <item>Choose Photo</item>
+        <item>Choose Video</item>
+    </string-array>
+    <string name="size_toast">The video must be less than 10 MB!</string>
+    <string name="file_problem_toast">There was a problem with the selected file!</string>
+    <string name="file_size_problem_toast">The selected file is too large. Choose another one!</string>
     <string name="hello_world">Hello world!</string>
+    <string name="menu_camera_label">Camera</string>
 </resources>
