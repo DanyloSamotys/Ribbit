@@ -1,2 +1,3 @@
 # Ribbit
-My messanger app made on Team Treehouse!
+My messanger app!
+Backend: Parce.com
