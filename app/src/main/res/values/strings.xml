@@ -37,4 +37,5 @@
     <string name="file_size_problem_toast">The selected file is too large. Choose another one!</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_camera_label">Camera</string>
+    <string name="title_activity_recipients">Choose Recipients</string>
 </resources>

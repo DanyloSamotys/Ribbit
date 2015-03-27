@@ -258,6 +258,20 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 mediaScanIntent.setData(mMediaUri);
                 sendBroadcast(mediaScanIntent);
             }
+
+            Intent recipientsIntent = new Intent(this, RecipientsActivity.class);
+            recipientsIntent.setData(mMediaUri);
+
+            String fileType;
+            if (requestCode == TAKE_PHOTO_REQUEST || requestCode == CHOOSE_PHOTO_REQUEST){
+                fileType = ParseConstants.IMAGE_TYPE;
+            }
+            else {
+                fileType = ParseConstants.VIDEO_TYPE;
+            }
+            recipientsIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
+            startActivity(recipientsIntent);
+
         } else if (resultCode == RESULT_CANCELED){
             Toast.makeText(this,R.string.error_dialod_title, Toast.LENGTH_LONG).show();
         }
@@ -290,14 +304,17 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             case R.id.action_logout:
                 ParseUser.logOut();
                 navigateToLogin();
+                break;
             case R.id.action_edit_friends:
                 Intent intent = new Intent(this, EditFriendsActivity.class);
                 startActivity(intent);
+                break;
             case R.id.action_camera:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setItems(R.array.camera_choices, mDialogListener);
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
