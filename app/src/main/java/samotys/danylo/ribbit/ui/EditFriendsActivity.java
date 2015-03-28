@@ -1,11 +1,9 @@
-package samotys.danylo.ribbit;
+package samotys.danylo.ribbit.ui;
 
         import android.app.AlertDialog;
         import android.support.v7.app.ActionBarActivity;
         import android.os.Bundle;
         import android.util.Log;
-        import android.view.Menu;
-        import android.view.MenuItem;
         import android.view.View;
         import android.view.Window;
         import android.widget.AdapterView;
@@ -20,6 +18,9 @@ package samotys.danylo.ribbit;
         import com.parse.SaveCallback;
 
         import java.util.List;
+
+        import samotys.danylo.ribbit.ParseConstants;
+        import samotys.danylo.ribbit.R;
 
 
 public class EditFriendsActivity extends ActionBarActivity {

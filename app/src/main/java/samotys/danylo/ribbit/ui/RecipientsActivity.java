@@ -1,4 +1,4 @@
-package samotys.danylo.ribbit;
+package samotys.danylo.ribbit.ui;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -28,6 +28,9 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import samotys.danylo.ribbit.FileHelper;
+import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.R;
 
 
 public class RecipientsActivity extends ActionBarActivity {
@@ -134,6 +137,10 @@ public class RecipientsActivity extends ActionBarActivity {
             else {
                 sendMessage(message);
                 finish();
+                if (mFileType.equals(ParseConstants.TEXT_TYPE)){
+                    Intent intent = new Intent(this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
             return true;
         }
@@ -166,21 +173,27 @@ public class RecipientsActivity extends ActionBarActivity {
         message.put(ParseConstants.KEY_RECIPIENT_IDS, getRecipientIds());
         message.put(ParseConstants.KEY_FILE_TYPE, mFileType);
 
-        byte[] fileBytes = FileHelper.getByteArrayFromFile(this, mMediaUri);
-
-        if (fileBytes == null){
-            return null;
+        if (mFileType.equals(ParseConstants.TEXT_TYPE)){
+            message.put(ParseConstants.KEY_MESSAGE, getIntent().getStringExtra("message"));
+            return message;
         }
         else {
-            if (mFileType.equals(ParseConstants.IMAGE_TYPE)){
-                fileBytes = FileHelper.reduceImageForUpload(fileBytes);
+
+            byte[] fileBytes = FileHelper.getByteArrayFromFile(this, mMediaUri);
+
+            if (fileBytes == null) {
+                return null;
+            } else {
+                if (mFileType.equals(ParseConstants.IMAGE_TYPE)) {
+                    fileBytes = FileHelper.reduceImageForUpload(fileBytes);
+                }
+
+                String fileName = FileHelper.getFileName(this, mMediaUri, mFileType);
+                ParseFile file = new ParseFile(fileName, fileBytes);
+                message.put(ParseConstants.KEY_FILE, file);
+
+                return message;
             }
-
-            String fileName = FileHelper.getFileName(this, mMediaUri, mFileType);
-            ParseFile file = new ParseFile(fileName, fileBytes);
-            message.put(ParseConstants.KEY_FILE, file);
-
-            return message;
         }
     }
 

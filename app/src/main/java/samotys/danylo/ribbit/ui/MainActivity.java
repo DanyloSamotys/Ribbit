@@ -1,11 +1,10 @@
-package samotys.danylo.ribbit;
+package samotys.danylo.ribbit.ui;
 
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
@@ -28,6 +27,10 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.R;
+import samotys.danylo.ribbit.SectionsPagerAdapter;
 
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
@@ -314,6 +317,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 builder.setItems(R.array.camera_choices, mDialogListener);
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                break;
+            case R.id.action_message:
+                Intent intent1 = new Intent(this, SendMessageActivity.class);
+                startActivity(intent1);
                 break;
         }
 

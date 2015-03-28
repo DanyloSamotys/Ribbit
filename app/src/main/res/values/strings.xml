@@ -38,4 +38,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_camera_label">Camera</string>
     <string name="title_activity_recipients">Choose Recipients</string>
+    <string name="title_activity_send_message">Send Message</string>
+    <string name="title_activity_view_image">Ribbit</string>
+    <string name="title_activity_view_message">Ribbit</string>
 </resources>

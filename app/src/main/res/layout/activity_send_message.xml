@@ -6,25 +6,21 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context="samotys.danylo.ribbit.ui.ResetPassActivity">
+                tools:context="samotys.danylo.ribbit.ui.SendMessageActivity">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
+        android:id="@+id/messageField"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/emailResetField"
-        android:hint="@string/email_hint"
-        android:layout_marginTop="50dp"/>
+        android:hint="Enter message"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/resert_text"
-        android:id="@+id/resetPassButton"
-        android:layout_below="@+id/emailResetField"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:text="CHOOSE RECIPIENTS"
+        android:id="@+id/chooseButton"
+        android:layout_below="@+id/messageField"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

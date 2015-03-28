@@ -1,4 +1,4 @@
-package samotys.danylo.ribbit;
+package samotys.danylo.ribbit.ui;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -16,6 +16,9 @@ import com.parse.ParseRelation;
 import com.parse.ParseUser;
 
 import java.util.List;
+
+import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.R;
 
 /**
  * Created by Danylo on 22.03.15.

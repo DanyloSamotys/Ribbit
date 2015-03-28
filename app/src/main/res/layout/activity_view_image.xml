@@ -2,14 +2,14 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context="samotys.danylo.ribbit.ui.RecipientsActivity">
+                tools:context="samotys.danylo.ribbit.ui.ViewImageActivity">
 
-    <ListView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/list_recipients"
+        android:id="@+id/imageView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter"/>
 </RelativeLayout>

@@ -10,6 +10,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.content.Context;
 import java.util.Locale;
 
+import samotys.danylo.ribbit.ui.FriendsFragment;
+import samotys.danylo.ribbit.ui.InboxFragment;
+
 /**
  * A {@link android.support.v4.app.FragmentPagerAdapter} that returns a fragment corresponding to
  * one of the sections/tabs/pages.
