@@ -41,6 +41,7 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
             holder.imageView = (ImageView)convertView.findViewById(R.id.messageIcon);
             holder.textView = (TextView)convertView.findViewById(R.id.senderLabel);
             holder.timeView = (TextView)convertView.findViewById(R.id.timeLabel);
+            convertView.setTag(holder);
         }
         else {
             holder = (ViewHolder) convertView.getTag();
@@ -63,6 +64,12 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
         holder.timeView.setText(mTime);
 
         return convertView;
+    }
+
+    public void refill(List<ParseObject> messages){
+        mMessages.clear();
+        mMessages.addAll(messages);
+        notifyDataSetChanged();
     }
 
     private class ViewHolder{

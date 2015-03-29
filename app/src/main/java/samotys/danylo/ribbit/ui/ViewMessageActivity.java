@@ -6,6 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import samotys.danylo.ribbit.R;
 
 
@@ -21,5 +24,13 @@ public class ViewMessageActivity extends ActionBarActivity {
         String message = getIntent().getStringExtra("message");
 
         textView.setText(message);
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                finish();
+            }
+        },10*1000);
     }
 }
