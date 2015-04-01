@@ -1,6 +1,5 @@
 package samotys.danylo.ribbit.ui;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
@@ -17,7 +16,7 @@ import com.parse.ParseUser;
 
 import java.util.List;
 
-import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.utils.ParseConstants;
 import samotys.danylo.ribbit.R;
 
 /**
@@ -45,6 +44,7 @@ public class FriendsFragment extends ListFragment {
         mFriendsRelation = mCurrentUser.getRelation(ParseConstants.KEY_FRIENDS_RELATION);
         ParseQuery<ParseUser> query = mFriendsRelation.getQuery();
         query.orderByAscending(ParseConstants.KEY_USERNAME);
+
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
             public void done(List<ParseUser> friends, ParseException e) {
@@ -65,13 +65,15 @@ public class FriendsFragment extends ListFragment {
 
                 }
                 else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext())
+                    //!!! Getting ClassCastExeption when launching app for the first time (after it works fine). I think it is because we dont yet have relations
+                    Log.e(TAG, e.getMessage());
+                    /*AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext())
                             .setMessage(e.getMessage())
                             .setTitle(R.string.error_dialod_title)
                             .setPositiveButton(android.R.string.ok, null);
 
                     AlertDialog dialog = builder.create();
-                    dialog.show();
+                    dialog.show();*/
                 }
             }
 

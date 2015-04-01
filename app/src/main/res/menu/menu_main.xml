@@ -8,11 +8,11 @@
           android:title="@string/logout_label"/>
     <item android:id="@+id/action_camera"
           android:title="@string/menu_camera_label"
-          android:icon="@drawable/ic_action_camera"
+          android:icon="@drawable/ic_menu_camera"
           app:showAsAction="always"/>
     <item android:id="@+id/action_message"
           android:title="Send Message"
-          android:icon="@drawable/ic_action_new_email"
+          android:icon="@drawable/ic_action_content_email"
           app:showAsAction="always"/>
 
 </menu>

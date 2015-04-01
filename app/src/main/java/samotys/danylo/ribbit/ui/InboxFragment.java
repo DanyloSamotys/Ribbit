@@ -19,8 +19,8 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-import samotys.danylo.ribbit.MessageAdapter;
-import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.adapters.MessageAdapter;
+import samotys.danylo.ribbit.utils.ParseConstants;
 import samotys.danylo.ribbit.R;
 
 /**

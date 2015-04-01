@@ -21,7 +21,7 @@
     <string name="title_activity_reset_pass">ResetPassActivity</string>
     <string name="resert_text">Reset password</string>
     <string name="error_reset_message">Sorry something went wrong. Try again!</string>
-    <string name="forgot_pass_label">Fargot your password?</string>
+    <string name="forgot_pass_label">Fargot password?</string>
     <string name="empty_inbox_label">No new messages!</string>
     <string name="empty_friends_label">Add friends to begin!</string>
     <string name="menu_edit_friends_label">Edit Friends</string>
@@ -41,4 +41,7 @@
     <string name="title_activity_send_message">Send Message</string>
     <string name="title_activity_view_image">Ribbit</string>
     <string name="title_activity_view_message">Ribbit</string>
+    <string name="cancel">CANCEL</string>
+    <string name="content_desc_button_divider">Button divider</string>
+    <string name="send_msg_title">TYPE IN AND SHARE</string>
 </resources>

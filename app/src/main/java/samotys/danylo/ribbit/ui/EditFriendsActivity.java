@@ -19,7 +19,7 @@ package samotys.danylo.ribbit.ui;
 
         import java.util.List;
 
-        import samotys.danylo.ribbit.ParseConstants;
+        import samotys.danylo.ribbit.utils.ParseConstants;
         import samotys.danylo.ribbit.R;
 
 

@@ -1,5 +1,6 @@
 package samotys.danylo.ribbit.ui;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -21,12 +22,24 @@ public class ResetPassActivity extends ActionBarActivity {
 
     @InjectView(R.id.emailResetField) EditText mEmailField;
     @InjectView(R.id.resetPassButton)Button mResetButton;
+    @InjectView(R.id.cancelButton) Button mCancelButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_pass);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         ButterKnife.inject(this);
+
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         mResetButton.setOnClickListener(new View.OnClickListener() {

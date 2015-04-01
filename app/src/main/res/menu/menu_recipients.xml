@@ -9,5 +9,5 @@
           android:orderInCategory="100"
           app:showAsAction="always"
           android:visible="false"
-          android:icon="@drawable/ic_action_send_now"/>
+          android:icon="@drawable/ic_menu_send"/>
 </menu>

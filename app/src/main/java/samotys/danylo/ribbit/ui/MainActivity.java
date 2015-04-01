@@ -28,9 +28,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.utils.ParseConstants;
 import samotys.danylo.ribbit.R;
-import samotys.danylo.ribbit.SectionsPagerAdapter;
+import samotys.danylo.ribbit.adapters.SectionsPagerAdapter;
 
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
@@ -206,7 +206,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             // this tab is selected.
             actionBar.addTab(
                     actionBar.newTab()
-                            .setText(mSectionsPagerAdapter.getPageTitle(i))
+                            .setIcon(mSectionsPagerAdapter.getIcon(i))
+                                    //.setText(mSectionsPagerAdapter.getPageTitle(i))
                             .setTabListener(this));
         }
     }

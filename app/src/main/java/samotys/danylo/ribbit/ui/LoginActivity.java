@@ -1,5 +1,6 @@
 package samotys.danylo.ribbit.ui;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.parse.LogInCallback;
@@ -26,12 +28,16 @@ public class LoginActivity extends ActionBarActivity {
     @InjectView(R.id.passwordField) EditText mPassword;
     @InjectView(R.id.loginButton)Button mLogInButton;
     @InjectView(R.id.forgotPassText) TextView mForgotPassText;
+    @InjectView(R.id.progressBar) ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        supportRequestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_login);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         ButterKnife.inject(this);
 
         mSignUpTextView.setOnClickListener(new View.OnClickListener() {
@@ -70,11 +76,11 @@ public class LoginActivity extends ActionBarActivity {
                 }
                 else {
                     // Login
-                    setSupportProgressBarIndeterminateVisibility(true);
+                    mProgressBar.setVisibility(View.VISIBLE);
                     ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser user, ParseException e) {
-                            setSupportProgressBarIndeterminateVisibility(false);
+                            mProgressBar.setVisibility(View.INVISIBLE);
                             if (user != null){
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

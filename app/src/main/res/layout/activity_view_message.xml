@@ -6,6 +6,7 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
+                style="@style/AuthBackground"
                 tools:context="samotys.danylo.ribbit.ui.ViewMessageActivity">
 
     <TextView
@@ -14,5 +15,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"/>
 </RelativeLayout>

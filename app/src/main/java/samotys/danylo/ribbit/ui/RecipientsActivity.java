@@ -28,8 +28,8 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import samotys.danylo.ribbit.FileHelper;
-import samotys.danylo.ribbit.ParseConstants;
+import samotys.danylo.ribbit.utils.FileHelper;
+import samotys.danylo.ribbit.utils.ParseConstants;
 import samotys.danylo.ribbit.R;
 
 
