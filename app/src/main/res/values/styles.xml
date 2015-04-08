@@ -13,6 +13,8 @@
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
         <item name="android:actionOverflowButtonStyle">@style/Theme.Ribbit.Overflow</item>
         <item name="navigationIcon">@drawable/ic_launcher</item>
+        <item name="android:listViewStyle">@style/LightPurpleBackground</item>
+        <item name="android:gridViewStyle">@style/LightPurpleBackground.GridView</item>
     </style>
 
     <style name="AuthBackground">
@@ -129,6 +131,15 @@
 
     <style name="TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="LightPurpleBackground" parent="Theme.Ribbit">
+        <item name="android:background">@color/light_purple_background</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="LightPurpleBackground.GridView" parent="Theme.Ribbit">
+        <item name="android:padding">@dimen/user_grid_spacing</item>
     </style>
 
 </resources>

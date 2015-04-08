@@ -36,4 +36,5 @@
         style="@style/AuthButton"
         android:layout_below="@+id/editTextLayout"
         android:text="CHOOSE RECIPIENTS"/>
+
 </RelativeLayout>

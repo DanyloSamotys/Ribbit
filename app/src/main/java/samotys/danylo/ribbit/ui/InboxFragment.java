@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -29,24 +31,37 @@ import samotys.danylo.ribbit.R;
 public class InboxFragment extends ListFragment {
 
     protected List<ParseObject> mMessages;
+    protected SwipeRefreshLayout mRefreshLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_inbox, container, false);
+
+        mRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
+        mRefreshLayout.setOnRefreshListener(mOnRefreshListner);
+        mRefreshLayout.setColorSchemeColors(R.color.swipeColor1, R.color.swipeColor2, R.color.swipeColor3, R.color.swipeColor4);
+
         return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        retrieveMessages();
+    }
 
+    private void retrieveMessages() {
         ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(ParseConstants.CLASS_MESSAGES);
         query.whereEqualTo(ParseConstants.KEY_RECIPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
         query.orderByDescending(ParseConstants.KEY_CREATED_AT);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> messages, ParseException e) {
+                if (mRefreshLayout.isRefreshing()){
+                    mRefreshLayout.setRefreshing(false);
+                }
+
                 if (e == null){
                     //We have messages!
                     mMessages = messages;
@@ -68,7 +83,6 @@ public class InboxFragment extends ListFragment {
                 }
             }
         });
-
     }
 
     @Override
@@ -124,4 +138,10 @@ public class InboxFragment extends ListFragment {
             message.saveInBackground();
         }
     }
+    protected SwipeRefreshLayout.OnRefreshListener mOnRefreshListner = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            retrieveMessages();
+        }
+    };
 }

@@ -10,11 +10,13 @@ import android.widget.TextView;
 
 import com.parse.ParseObject;
 
+import java.util.Date;
 import java.util.List;
 
 import samotys.danylo.ribbit.utils.ParseConstants;
 import samotys.danylo.ribbit.R;
 
+import static android.text.format.DateUtils.SECOND_IN_MILLIS;
 import static android.text.format.DateUtils.getRelativeTimeSpanString;
 
 /**
@@ -53,13 +55,15 @@ public class MessageAdapter extends ArrayAdapter<ParseObject> {
             holder.imageView.setImageResource(R.drawable.ic_action_5_content_unread);
         }
         else if (messages.getString(ParseConstants.KEY_FILE_TYPE).equals(ParseConstants.IMAGE_TYPE)){
-            holder.imageView.setImageResource(R.drawable.ic_action_picture);
+            holder.imageView.setImageResource(R.drawable.ic_picture);
         }
         else {
-            holder.imageView.setImageResource(R.drawable.ic_action_play_over_video);
+            holder.imageView.setImageResource(R.drawable.ic_video);
         }
         
-        mTime = getRelativeTimeSpanString(messages.getCreatedAt().getTime()).toString();
+        mTime = getRelativeTimeSpanString(messages.getCreatedAt().getTime(),
+                new Date().getTime(),
+                SECOND_IN_MILLIS).toString();
 
         holder.textView.setText(messages.getString(ParseConstants.KEY_SENDER_NAME));
         holder.timeView.setText(mTime);
