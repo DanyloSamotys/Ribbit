@@ -45,4 +45,6 @@
     <string name="content_desc_button_divider">Button divider</string>
     <string name="send_msg_title">TYPE IN AND SHARE</string>
     <string name="content_desc_user_avatar">User avatar</string>
+    <string name="content_desc_user_checkmark">User checkmark</string>
+    <string name="push_message">You have a new message from %s!</string>
 </resources>

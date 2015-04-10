@@ -20,6 +20,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import samotys.danylo.ribbit.R;
 
+import static samotys.danylo.ribbit.RibbitApplication.updateParseInstallation;
+
 
 public class LoginActivity extends ActionBarActivity {
 
@@ -82,6 +84,8 @@ public class LoginActivity extends ActionBarActivity {
                         public void done(ParseUser user, ParseException e) {
                             mProgressBar.setVisibility(View.INVISIBLE);
                             if (user != null){
+                                updateParseInstallation(user);
+
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

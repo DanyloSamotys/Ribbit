@@ -18,6 +18,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import samotys.danylo.ribbit.R;
 
+import static samotys.danylo.ribbit.RibbitApplication.updateParseInstallation;
+
 
 public class SignUpActivity extends ActionBarActivity {
 
@@ -78,6 +80,8 @@ public class SignUpActivity extends ActionBarActivity {
                             setSupportProgressBarIndeterminateVisibility(false);
                             if (e == null){
                                 //Success!
+                                updateParseInstallation(ParseUser.getCurrentUser());
+
                                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
